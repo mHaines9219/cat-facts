@@ -9,7 +9,11 @@
 
 <body>
     <p>Here's your fact</p>
-    <%= catFact.fact %>
+    <%=facts[Math.floor(Math.random() * facts.length)].fact %>
+        <p>
+        </p>
+
+
 
 
         <a href="/cats">Get Another!</a>

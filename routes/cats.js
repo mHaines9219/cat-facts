@@ -5,10 +5,16 @@ var router = express.Router();
 
 /* GET home page. */
 router.get("/", async function (req, res, next) {
-  const catFact = await fetch(`https://catfact.ninja/fact`).then((res) =>
+  const catFact = await fetch(`https://catfact.ninja/facts`).then((res) =>
     res.json()
   );
-  res.render("cats", { catFact });
+  res.render("cats", { facts: catFact.data });
 });
+// router.get("/", async function (req, res, next) {
+//   const catFact = await fetch(`https://catfact.ninja/fact`).then((res) =>
+//     res.json()
+//   );
+//   res.render("cats", { catFact });
+// });
 
 module.exports = router;
